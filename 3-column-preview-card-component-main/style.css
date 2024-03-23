@@ -1,0 +1,100 @@
+:root{
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+    --Very-light-gray: hsl(0, 0%, 95%);
+
+    --background:var(--Very-light-gray);
+    --heading:var(--Very-light-gray);
+    --buttons:var(--Very-light-gray);
+}
+
+*,*::before,*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:var(--background);
+    font-size:0.9375rem;
+    font-family:'Lexend Deca',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    color:var(--Very-light-gray);
+    font-weight:400;
+    max-width:800px;
+    border-radius:0.625rem;
+    overflow:hidden;
+    /* outline:2px solid red; */
+}
+h1{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight:700;
+    text-transform: uppercase;
+    font-size:2rem;
+    
+}
+p{
+    line-height:1.5;
+    color:var(--Transparent-white);
+    margin-bottom:3rem;
+    
+}
+section{
+    padding:2rem;
+}
+section a{
+    text-decoration:none;
+    border-radius:2rem;
+    padding:0.625rem 1.875rem;
+    display:inline-block;
+    color:transparent;
+    background:var(--Very-light-gray);
+    /* outline:2px solid var(--Very-light-gray); */
+}
+section:first-of-type{
+    background:var(--Bright-orange);
+
+}
+section:nth-child(2){
+    background:var(--Dark-cyan);
+}
+section:nth-child(3){
+    background:var(--Very-dark-cyan);
+}
+section:first-of-type a{
+    color:var(--Bright-orange);
+}
+section:nth-child(2) a{
+    color:var(--Dark-cyan);
+}
+section:nth-child(3) a{
+    color:var(--Very-dark-cyan);
+}
+section a:hover,section a:active{
+    color:var(--Very-light-gray);
+    background:transparent;
+    outline:2px solid var(--Very-light-gray);
+    transition:;
+}
+section > *:nth-child(-n+2){
+    margin-bottom:1rem;
+}
+@media screen and (max-width:768px){
+    main{
+        grid-template-columns:1fr;
+    }
+    p{
+        margin-bottom:1.5rem;
+    }
+}
